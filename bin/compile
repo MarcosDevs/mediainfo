@@ -14,8 +14,9 @@ echo "-----> CONFIGURE"
 echo "-----> MAKE"
 make
 
-git clone https://github.com/MediaArea/MediaInfoLib.git
-cd MediaInfoLib/Project/GNU/Library
+wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/mediainfo/17.12-1/mediainfo_17.12.orig.tar.gz
+tar xvf mediainfo_17.12.orig.tar.gz
+cd MediaInfo/Project/GNU/CLI
 ./autogen.sh
 echo "-----> CONFIGURE"
 ./configure
