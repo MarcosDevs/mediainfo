@@ -1,8 +1,19 @@
 #!/bin/sh
 
 set -e
+BUILD_DIR=$1
 
 cd $BUILD_DIR
+
+wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/libzen/0.4.37-1/libzen_0.4.37.orig.tar.gz
+tar xvf libzen_0.4.37.orig.tar.gz
+cd ZenLib/Project/GNU/Library
+./autogen.sh
+echo "-----> CONFIGURE"
+./configure
+echo "-----> MAKE"
+make
+
 git clone https://github.com/MediaArea/MediaInfoLib.git
 cd MediaInfoLib/Project/GNU/Library
 ./autogen.sh
