@@ -16,7 +16,7 @@ chmod +x "${BUILD_DIR}/vendor/MediaInfo"
 
 echo "-----> Exporting PATH and LIBRARY_PATH"
 
-PROFILE_PATH="$BUILD_DIR/.profile.d/mediainfo.sh"
+PROFILE_PATH="$BUILD_DIR/.profile.d/MediaInfo.sh"
 mkdir -p $(dirname $PROFILE_PATH)
-echo 'export PATH="$PATH:$HOME/vendor/mediainfo"' >> $PROFILE_PATH
+echo 'export PATH="$PATH:$HOME/vendor/MediaInfo"' >> $PROFILE_PATH
 echo "-----> MEDIAINFO INSTALLED"
