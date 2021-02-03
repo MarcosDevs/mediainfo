@@ -19,5 +19,5 @@ cd $CURRDIR
 mkdir -p $BUILD_DIR/.profile.d
 PROFILE_PATH="$BUILD_DIR/.profile.d/megatools.sh"
 echo "-----> ${PROFILE_PATH}"
-echo "export PATH=\$PATH:/app/vendor/Mediainfo
+echo "export PATH=\$PATH:/app/vendor/Mediainfo" >> $PROFILE_PATH
 
