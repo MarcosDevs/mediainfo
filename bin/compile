@@ -17,7 +17,7 @@ export PATH="$PATH:$PWD"
 cd $CURRDIR
 
 mkdir -p $BUILD_DIR/.profile.d
-PROFILE_PATH="$BUILD_DIR/.profile.d/megatools.sh"
+PROFILE_PATH="$BUILD_DIR/.profile.d/mediainfo.sh"
 echo "-----> ${PROFILE_PATH}"
 echo "export PATH=\$PATH:/app/vendor/MediaInfo" >> $PROFILE_PATH
 
