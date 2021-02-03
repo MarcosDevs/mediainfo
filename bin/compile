@@ -12,13 +12,12 @@ wget -P /tmp https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/mediainf
 tar xvf /tmp/mediainfo_17.12.orig.tar.gz -C $BUILD_DIR/vendor/
 
 echo "-----> chmod +x mediainfo"
-ls "${BUILD_DIR}/vendor"
-chmod +x "${BUILD_DIR}/vendor/mediainfo"
+chmod +x "${BUILD_DIR}/vendor/MediaInfo"
 export PATH="$PATH:$PWD"
 cd $CURRDIR
 
 mkdir -p $BUILD_DIR/.profile.d
 PROFILE_PATH="$BUILD_DIR/.profile.d/megatools.sh"
 echo "-----> ${PROFILE_PATH}"
-echo "export PATH=\$PATH:/app/vendor/mediainfo" >> $PROFILE_PATH
+echo "export PATH=\$PATH:/app/vendor/MediaInfo" >> $PROFILE_PATH
 
