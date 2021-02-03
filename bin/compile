@@ -8,9 +8,19 @@ CURRDIR=$PWD
 
 mkdir -p $BUILD_DIR/vendor
 
+wget -P /tmp https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/libzen/0.4.37-1/libzen_0.4.37.orig.tar.gz
+tar xvf /tmp/libzen_0.4.37.orig.tar.gz -C $BUILD_DIR/vendor/
+cd $BUILD_DIR/vendor/ZenLib/Project/GNU/Library
+./autogen.sh
+echo "-----> CONFIGURE"
+./configure
+echo "-----> MAKE"
+make
+make install
+
 wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/mediainfo/17.12-1/mediainfo_17.12.orig.tar.gz
 tar xvf mediainfo_17.12.orig.tar.gz
-cd MediaInfo/Project/GNU/GUI
+cd MediaInfo/Project/GNU/CLI
 ./autogen.sh
 echo "-----> CONFIGURE"
 ./configure
