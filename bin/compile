@@ -20,5 +20,3 @@ mkdir -p $(dirname $PROFILE_PATH)
 echo "----->  EXPORTING"
 
 echo 'export PATH="$PATH:$HOME/vendor/Mediainfo"' >> $PROFILE_PATH
-
-echo "-----> MEDIAINFO INSTALLED"
