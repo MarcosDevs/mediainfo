@@ -4,18 +4,18 @@ set -e
 
 BUILD_DIR=$1
 CACHE_DIR=$2
-MEDIAINFO_VERSION="0.7.91"
-ARCHIVE="mediainfo_17.12.orig.tar.gz"
+CURRDIR=$PWD
 
-# config
-echo "-----> Extract mediainfo"
-mkdir -p "${BUILD_DIR}/vendor"
-tar -vzxf "${ARCHIVE}" -C "${BUILD_DIR}/vendor"
-echo "-----> chmod +x mediainfo"
-chmod +x "${BUILD_DIR}/vendor/mediainfo"
+mkdir -p $BUILD_DIR/vendor
 
+wget -P /tmp https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/mediainfo/17.12-1/mediainfo_17.12.orig.tar.gz
+tar xvf /tmp/mediainfo_17.12.orig.tar.gz --strip-components=1 --one-top-level=$BUILD_DIR/vendor/mediainfo_17.12
+
+cd $BUILD_DIR/vendor/mediainfo_17.12
 echo "-----> Exporting PATH and LIBRARY_PATH"
+export PATH="$PATH:$PWD"
+echo "-----> Exporting mediainfo.sh"
 PROFILE_PATH="$BUILD_DIR/.profile.d/mediainfo.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:$HOME/vendor/mediainfo"' >> $PROFILE_PATH
-echo "-----> MEDIAINFO " $MEDIAINFO_VERSION " COMPLETED"
+echo "-----> MEDIAINFO COMPLETED"
