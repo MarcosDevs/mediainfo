@@ -12,6 +12,7 @@ echo "-----> CONFIGURE"
 ./configure
 echo "-----> MAKE"
 make
+make install
 
 wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/mediainfo/17.12-1/mediainfo_17.12.orig.tar.gz
 tar xvf mediainfo_17.12.orig.tar.gz
@@ -21,3 +22,4 @@ echo "-----> CONFIGURE"
 ./configure
 echo "-----> MAKE"
 make
+make install
