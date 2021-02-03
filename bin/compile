@@ -11,7 +11,7 @@ ARCHIVE="mediainfo_17.12.orig.tar.gz"
 echo "-----> Extract mediainfo"
 mkdir -p "${BUILD_DIR}/vendor"
 rm -rf "${BUILD_DIR}/vendor/mediainfo"
-tar -xf "${ARCHIVE}" -C "${BUILD_DIR}/vendor"
+tar -vzxf "${ARCHIVE}" -C "${BUILD_DIR}/vendor"
 echo "-----> chmod +x mediainfo"
 chmod +x "${BUILD_DIR}/vendor/mediainfo/mediainfo"
 
