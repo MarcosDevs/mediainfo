@@ -5,8 +5,7 @@ BUILD_DIR=$1
 
 cd $BUILD_DIR
 
-wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/libzen/0.4.37-1/libzen_0.4.37.orig.tar.gz
-tar xvf libzen_0.4.37.orig.tar.gz
+git clone https://github.com/MediaArea/ZenLib
 cd ZenLib/Project/GNU/Library
 ./autogen.sh
 echo "-----> CONFIGURE"
