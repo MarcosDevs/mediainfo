@@ -13,6 +13,7 @@ tar xvf /tmp/mediainfo_17.12.orig.tar.gz -C $BUILD_DIR/vendor/
 
 echo "-----> chmod +x mediainfo"
 chmod +x "${BUILD_DIR}/vendor/Mediainfo
+export PATH="$PATH:$PWD"
 cd $CURRDIR
 
 mkdir -p $BUILD_DIR/.profile.d
