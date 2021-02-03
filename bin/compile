@@ -6,14 +6,14 @@ BUILD_DIR=$1
 cd $BUILD_DIR
 
 wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/libzen/0.4.37-1/libzen_0.4.37.orig.tar.gz
-tar xvf libzen_0.4.37.orig.tar.gz
-cd ZenLib/Project/GNU/Library
+tar xvf libzen_0.4.37.orig.tar.gz -C $BUILD_DIR/vendor/
+cd $BUILD_DIR/vendor/ZenLib/Project/GNU/Library
 ./autogen.sh
 echo "-----> CONFIGURE"
 ./configure
 echo "-----> MAKE"
 make
-sudo make install
+make install
 
 wget https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/mediainfo/17.12-1/mediainfo_17.12.orig.tar.gz
 tar xvf mediainfo_17.12.orig.tar.gz
