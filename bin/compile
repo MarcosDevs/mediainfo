@@ -6,16 +6,6 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 CURRDIR=$PWD
 
-mkdir -p $BUILD_DIR/vendor
-
-wget -P /tmp https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/mediainfo/17.12-1/mediainfo_17.12.orig.tar.gz
-tar xvf /tmp/mediainfo_17.12.orig.tar.gz --strip-components=1 --one-top-level=$BUILD_DIR/vendor/mediainfo_17.12
-
-cd $BUILD_DIR/vendor/mediainfo_17.12
-echo "-----> Exporting PATH and LIBRARY_PATH"
-export PATH="$PATH:$PWD"
-echo "-----> Exporting mediainfo.sh"
-PROFILE_PATH="$BUILD_DIR/.profile.d/mediainfo.sh"
-mkdir -p $(dirname $PROFILE_PATH)
-echo 'export PATH="$PATH:$HOME/vendor/mediainfo"' >> $PROFILE_PATH
-echo "-----> MEDIAINFO COMPLETED"
+git clone https://github.com/MediaArea/MediaInfo.git
+cd MediaInfo/Project/GNU/CLI
+./autogen.sh
