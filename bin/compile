@@ -10,6 +10,7 @@ mkdir -p $BUILD_DIR/vendor
 
 wget -P /tmp https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/libzen/0.4.37-1/libzen_0.4.37.orig.tar.gz
 tar xvf /tmp/libzen_0.4.37.orig.tar.gz -C $BUILD_DIR/vendor/
+chmod +x $BUILD_DIR/vendor/ZenLib
 cd $BUILD_DIR/vendor/ZenLib/Project/GNU/Library
 ./autogen.sh
 echo "-----> CONFIGURE"
