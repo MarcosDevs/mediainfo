@@ -12,7 +12,7 @@ wget -P /tmp https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/mediainf
 tar xvf /tmp/mediainfo_17.12.orig.tar.gz -C $BUILD_DIR/vendor/
 
 echo "-----> chmod +x mediainfo"
-chmod +x "${BUILD_DIR}/vendor/Mediainfo
+chmod +x "${BUILD_DIR}/vendor/Mediainfo"
 export PATH="$PATH:$PWD"
 cd $CURRDIR
 
