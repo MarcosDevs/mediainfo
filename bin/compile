@@ -13,11 +13,8 @@ tar xvf /tmp/mediainfo_17.12.orig.tar.gz -C $BUILD_DIR/vendor/
 
 echo "-----> chmod +x mediainfo"
 chmod +x "${BUILD_DIR}/vendor/MediaInfo"
-export PATH="$PATH:$PWD"
-cd $CURRDIR
 
-mkdir -p $BUILD_DIR/.profile.d
-PROFILE_PATH="$BUILD_DIR/.profile.d/mediainfo.sh"
-echo "-----> ${PROFILE_PATH}"
-echo "export PATH=\$PATH:/app/vendor/MediaInfo" >> $PROFILE_PATH
-
+echo "-----> Exporting PATH and LIBRARY_PATH"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:$HOME/vendor/mediainfo"' >> $PROFILE_PATH
+echo "-----> MEDIAINFO INSTALLED"
